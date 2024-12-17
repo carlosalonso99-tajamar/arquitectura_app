@@ -1,0 +1,35 @@
+src/
+├── main.py                     # Punto de entrada de la aplicación.
+├── config/                     # Configuración general.
+│   ├── settings.py             # Variables de configuración.
+│   └── container.py            # Contenedor para inyección de dependencias.
+├── api/                        # Interfaces de entrada.
+│   ├── v1/
+│   │   ├── routers/            # Endpoints organizados por funcionalidad.
+│   │   │   ├── user_router.py  # Rutas relacionadas con usuarios.
+│   │   │   ├── task_router.py  # Rutas relacionadas con tareas.
+│   │   └── dependencies.py     # Gestión de dependencias para la API.
+├── domain/                     # Lógica de negocio pura.
+│   ├── entities.py             # Entidades de dominio.
+│   ├── interfaces.py           # Contratos para repositorios y servicios.
+│
+├── use_cases/                  # Casos de Uso.
+│   ├── use_case_1.py          # Crear usuario.
+│   ├── uuse_case_2.py          # Actualizar usuario.
+│
+├── infrastructure/             # Implementaciones técnicas.
+│   ├── database/               # Detalles relacionados con bases de datos.
+│   │   ├── models.py           # Modelos ORM.
+│   │   ├── repositories.py     # Implementación de repositorios.
+│   │   └── database.py         # Configuración de la base de datos.
+│   ├── tasks/                  # Tareas de Celery.
+│   │   ├── celery.py           # Configuración global de Celery.
+│   │   └── user_tasks.py       # Tareas específicas de usuarios.
+│   └── services/               # Implementaciones de servicios.
+│       ├── email_service.py    # Enviar correos electrónicos.
+│       └── third_party_api.py  # Interacción con APIs externas.
+├── tests/                      # Pruebas.
+│   ├── unit/                   # Pruebas unitarias.
+│   ├── integration/            # Pruebas de integración.
+└── utils/                      # Utilidades generales.
+    └── exceptions.py           # Manejo de errores personalizados.
